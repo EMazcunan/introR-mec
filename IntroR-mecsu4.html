@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.2.0" />
+<title>Hojas de datos</title>
+<meta charset='utf-8' />
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' />
+<meta content='width=device-width,initial-scale=1' name='viewport' />
+<link rel='stylesheet' type='text/css' href='IntroR-mec.css' />
+<meta content='IntroR-mec.tex' name='src' />
+<script id='MathJax-script' type='text/javascript' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js' async='async'>
+</script>
+</head>
+<body>
+<nav class='breadcrumbs-bar'><span><a href='IntroR-mec3.html'>Inicio</a> &gt;&nbsp;3&nbsp;<a href='IntroR-mecse3.html#x6-30003'>Primeros pasos con <span class='texttt'>R</span></a> &gt;&nbsp;3.4&nbsp;<a href='#x10-90003.4'>Hojas de datos</a></span></nav>
+<nav class='controls-bar'>
+<nav class='prev'><a href='IntroR-mecsu3.html'><span>❮</span></a></nav>
+<nav class='next'><a href='IntroR-mecsu5.html'><span>❯</span></a></nav>
+</nav>
+<h4 class='subsectionHead'><span class='titlemark'>3.4</span> <a id='x10-90003.4' href='IntroR-mec2.html#QQ2-10-9'><span class='fakebreadcrumbs'> </span></a><span class='fakebreadcrumbs'> </span>Hojas de datos</h4>
+<!-- l. 391 -->
+<p class='noindent'>Las hojas de datos (en inglés <span class='emph'>data frames</span>) son la clase de objetos que se usan en <span class='texttt'>R</span> para almacenar los datos obtenidos en un experimento y poder analizarlos.</p>
+<!-- l. 395 -->
+<p class='noindent'>Pueden crearse desde <span class='texttt'>R</span>, o importando los datos almacenados en un archivo con la estructura adecuada.</p>
+<!-- l. 399 -->
+<p class='noindent'></p>
+<h5 class='subsubsectionHead'><span class='titlemark'>3.4.1</span> <a id='x10-100003.4.1' href='IntroR-mecse3.html#QQ2-10-10'><span class='fakebreadcrumbs'> </span></a><span class='fakebreadcrumbs'> </span>Creación de una hoja de datos a partir de un archivo</h5>
+<!-- l. 401 -->
+<p class='noindent'>En este apartado veremos cómo crear una hoja de datos importando los datos contenidos en un archivo de extensión CSV (<span class='emph'>comma separated values</span>).</p>
+<!-- l. 405 -->
+<p class='noindent'>Haz click en el enlace a continuación para descargar en tu equivo el archivo CSV con el que trabajaremos, y guárdalo en la misma carpeta donde hayas guardado el script con el que estés trabajando: <a target='_blank' href='https://drive.google.com//uc?export=download&amp;id=1xDIvAcQSS4_dFoSIO2hcprhqnbXJqx9r'>temperaturas.csv</a></p>
+<!-- l. 410 -->
+<p class='noindent'>El archivo <span class='texttt'>temperaturas.csv</span> contiene las temperaturas máximas y mínimas registradas en el observatorio de la Virgen del Camino para todos los días del mes de abril del año 2018. No tienes que abrirlo con ninguna aplicación de hojas de cálculo, sino importarlo en <span class='texttt'>R</span> usando la función <span class='texttt'>read.csv</span> conforme se explica a continuación.</p>
+<!-- l. 416 -->
+<p class='noindent'>Antes de nada, vamos a hacer que el directorio donde están el script y el archivo de datos sea nuestro directorio de trabajo. Los archivos ubicados en el directorio de trabajo son encontrados por <span class='texttt'>R</span> sin necesidad de especificar su ruta completa. Para fijar el directorio de trabajo selecciona el menú de <span class='texttt'>RStudio</span> la</p>
+<div class='center'><!-- l. 422 -->
+<p class='noindent'></p>
+<!-- l. 423 -->
+<p class='noindent'><span class='texttt'>Session &gt; Set Working Directory &gt; To Source File Location</span>.</p>
+</div>
+<!-- l. 426 -->
+<p class='noindent'>Esto fijará como directorio de trabajo la carpeta del script que estas ejecutando, en la que también debe estar el archivo de datos <span class='texttt'>temperaturas.csv</span>.</p>
+<!-- l. 430 -->
+<p class='noindent'>Ya estamos listos para importar el archivo <span class='texttt'>temperaturas.csv</span>. La siguiente instrucción lee los contenidos del archivo y los almacena en una hoja de datos de nombre <span class='texttt'>temps</span>:</p>
+<div class='mdframed' id='mdframed-8'><!-- l. 435 -->
+<p class='noindent'></p>
+<div class='fancyvrb' id='fancyvrb8'><a id='x10-10002r1'></a><span class='ec-lmtt-12'>temps&nbsp;&lt;-</span><span id='textcolor15'><span class='ec-lmtt-12'>&nbsp;</span></span><span id='textcolor16'><b>read.csv</b></span><span class='ec-lmtt-12'>(</span><span id='textcolor17'><span class='ec-lmtt-12'>"temperaturas.csv"</span></span><span class='ec-lmtt-12'>)</span></div>
+</div>
+<h5 class='subsubsectionHead'><span class='titlemark'>3.4.2</span> <a id='x10-110003.4.2' href='IntroR-mecse3.html#QQ2-10-11'><span class='fakebreadcrumbs'> </span></a><span class='fakebreadcrumbs'> </span>Trabajar con una hoja de datos</h5>
+<!-- l. 443 -->
+<p class='noindent'>Para visualizar el contenido de la hoja de datos <span class='texttt'>temps</span> que acabamos de crear puede usarse la función <span class='texttt'>View</span>:</p>
+<div class='mdframed' id='mdframed-9'><!-- l. 447 -->
+<p class='noindent'></p>
+<div class='fancyvrb' id='fancyvrb9'><a id='x10-11002r1'></a><span id='textcolor18'><b>View</b></span><span class='ec-lmtt-12'>(temps)</span></div>
+</div>
+<!-- l. 452 -->
+<p class='noindent'>Al ejecutar la instrucción anterior se abrirá una nueva pestaña en el panel de scripts en la que se muestra la hoja de datos como una hoja de cálculo o matriz. Verás que hay <!-- l. 454 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'>
+<mrow>
+<mn>30</mn>
+</mrow>
+</math> filas, una por cada día del mes, y <!-- l. 455 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'>
+<mrow>
+<mn>3</mn>
+</mrow>
+</math> columnas con las variables:</p>
+<ul class='itemize1'>
+<li class='itemize'><span class='texttt'>Fecha</span>: fecha del día en formato día/mes/año</li>
+<li class='itemize'><span class='texttt'>Tmax</span>: temperatura máxima del día</li>
+<li class='itemize'><span class='texttt'>Tmin</span>: temperatura mínima del día</li>
+</ul>
+<!-- l. 467 -->
+<p class='noindent'>En general, los contenidos de una hoja de datos están organizados en forma de matriz u hoja de cálculo, de manera que cada fila representa una unidad experimental o observación (en este caso un día del mes), y cada columna una característica o variable de interés.</p>
+<!-- l. 472 -->
+<p class='noindent'>Para extraer una de las variables de una hoja de datos se utiliza el formato <span class='texttt'>&lt;nombre&nbsp;hoja&gt;$&lt;nombre&nbsp;variable&gt;</span>. Por ejemplo, para extraer las temperaturas máximas (variable <span class='texttt'>Tmax</span>) de nuestra hoja de datos utilizamos la instrucción siguiente:</p>
+<div class='mdframed' id='mdframed-10'><!-- l. 480 -->
+<p class='noindent'></p>
+<div class='fancyvrb' id='fancyvrb10'><a id='x10-11004r1'></a><span class='ec-lmtt-12'>temps</span><span id='textcolor19'><b>$</b></span><span class='ec-lmtt-12'>Tmax</span></div>
+</div>
+<!-- l. 485 -->
+<p class='noindent'>que mostrará en consola el vector con las <!-- l. 485 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'>
+<mrow>
+<mn>30</mn>
+</mrow>
+</math> temperaturas máximas.</p>
+<!-- l. 487 -->
+<p class='noindent'>En el siguiente fragmento de código se almacenan, en un vector de nombre <span class='texttt'>maximas</span>, los <!-- l. 488 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'>
+<mrow>
+<mn>30</mn>
+</mrow>
+</math> valores de las temperaturas máximas en nuestra hoja de datos. Y después se calculan la media de las temperaturas máximas y la más alta de las temperaturas máximas, con las funciones <span class='texttt'>mean</span> y <span class='texttt'>max</span> respectivamente (las dos líneas precedidas por <span class='texttt'>##</span> después del código son la salida que obtendrás por consola, no tienes que copiarlas en tu script).</p>
+<div class='mdframed' id='mdframed-11'><!-- l. 496 -->
+<p class='noindent'></p>
+<div class='fancyvrb' id='fancyvrb11'><a id='x10-11006r1'></a><span id='textcolor20'><i>#&nbsp;vector&nbsp;de&nbsp;temperaturas&nbsp;máximas</i></span><br class='fancyvrb' />
+<a id='x10-11008r2'></a><span class='ec-lmtt-12'>maximas&nbsp;&lt;-</span><span id='textcolor21'><span class='ec-lmtt-12'>&nbsp;</span></span><span class='ec-lmtt-12'>temps</span><span id='textcolor22'><b>$</b></span><span class='ec-lmtt-12'>Tmax</span><br class='fancyvrb' />
+<a id='x10-11010r3'></a><span id='textcolor23'><i>#&nbsp;media&nbsp;de&nbsp;las&nbsp;temperaturas&nbsp;máximas</i></span><br class='fancyvrb' />
+<a id='x10-11012r4'></a><span id='textcolor24'><b>mean</b></span><span class='ec-lmtt-12'>(maximas)</span></div>
+</div>
+<div class='verbatim' id='verbatim-1'>##&nbsp;[1]&nbsp;15.16</div>
+<!-- l. 506 -->
+<p class='nopar'></p>
+<div class='mdframed' id='mdframed-12'><!-- l. 509 -->
+<p class='noindent'></p>
+<div class='fancyvrb' id='fancyvrb12'><a id='x10-11014r1'></a><span id='textcolor25'><i>#&nbsp;máxima&nbsp;de&nbsp;las&nbsp;temperaturas&nbsp;máximas</i></span><br class='fancyvrb' />
+<a id='x10-11016r2'></a><span id='textcolor26'><b>max</b></span><span class='ec-lmtt-12'>(maximas)</span></div>
+</div>
+<div class='verbatim' id='verbatim-2'>##&nbsp;[1]&nbsp;25.6</div>
+<!-- l. 517 -->
+<p class='nopar'></p>
+<!-- l. 519 -->
+<p class='noindent'></p>
+<div style='height:3em; width:10px; clear:both;'></div>
+</body>
+</html>

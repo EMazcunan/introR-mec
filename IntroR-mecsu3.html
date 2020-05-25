@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.2.0" />
+<title>Variables</title>
+<meta charset='utf-8' />
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' />
+<meta content='width=device-width,initial-scale=1' name='viewport' />
+<link rel='stylesheet' type='text/css' href='IntroR-mec.css' />
+<meta content='IntroR-mec.tex' name='src' />
+<script id='MathJax-script' type='text/javascript' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js' async='async'>
+</script>
+</head>
+<body>
+<nav class='breadcrumbs-bar'><span><a href='IntroR-mec3.html'>Inicio</a> &gt;&nbsp;3&nbsp;<a href='IntroR-mecse3.html#x6-30003'>Primeros pasos con <span class='texttt'>R</span></a> &gt;&nbsp;3.3&nbsp;<a href='#x9-80003.3'>Variables</a></span></nav>
+<nav class='controls-bar'>
+<nav class='prev'><a href='IntroR-mecsu2.html'><span>❮</span></a></nav>
+<nav class='next'><a href='IntroR-mecsu4.html'><span>❯</span></a></nav>
+</nav>
+<h4 class='subsectionHead'><span class='titlemark'>3.3</span> <a id='x9-80003.3' href='IntroR-mec2.html#QQ2-9-8'><span class='fakebreadcrumbs'> </span></a><span class='fakebreadcrumbs'> </span>Variables</h4>
+<!-- l. 342 -->
+<p class='noindent'>Igual que en Maxima utilizábamos el símbolo <span class='texttt'>:</span> para crear y asignar valores a variable, el operador de asignación en <span class='texttt'>R</span> es <span class='texttt'>&lt;-</span> (compuesto por el símbolo menor <span class='texttt'>&lt;</span> y un guión central <span class='texttt'>-</span>). La instrucción</p>
+<div class='mdframed' id='mdframed-4'><!-- l. 348 -->
+<p class='noindent'></p>
+<div class='fancyvrb' id='fancyvrb4'><a id='x9-8002r1'></a><span class='ec-lmtt-12'>x&nbsp;&lt;-</span><span id='textcolor5'><span class='ec-lmtt-12'>&nbsp;</span></span><span id='textcolor6'><span class='ec-lmtt-12'>2</span></span></div>
+</div>
+<!-- l. 353 -->
+<p class='noindent'>crea una variable u objeto de nombre <span class='texttt'>x</span> y le asigna el valor <!-- l. 354 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'>
+<mrow>
+<mn>2</mn>
+</mrow>
+</math>.</p>
+<!-- l. 356 -->
+<p class='noindent'>Una vez definida la variable <span class='texttt'>x</span> podemos referenciarla en cálculos posteriores. Por ejemplo, al ejecutar la instrucción</p>
+<div class='mdframed' id='mdframed-5'><!-- l. 360 -->
+<p class='noindent'></p>
+<div class='fancyvrb' id='fancyvrb5'><a id='x9-8004r1'></a><span class='ec-lmtt-12'>x</span><span id='textcolor7'><b>^</b></span><span id='textcolor8'><span class='ec-lmtt-12'>2-3</span></span></div>
+</div>
+<!-- l. 365 -->
+<p class='noindent'>obtendremos la salida <!-- l. 365 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'>
+<mrow>
+<mn>1</mn>
+</mrow>
+</math> (resultado de <!-- l. 365 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'>
+<mrow>
+<msup>
+<mrow>
+<mi>x</mi>
+</mrow>
+<mrow>
+<mn>2</mn>
+</mrow>
+</msup>
+<mo class='MathClass-bin'>−</mo>
+<mn>3</mn>
+<mo class='MathClass-rel'>=</mo>
+<msup>
+<mrow>
+<mn>2</mn>
+</mrow>
+<mrow>
+<mn>2</mn>
+</mrow>
+</msup>
+<mo class='MathClass-bin'>−</mo>
+<mn>3</mn>
+<mo class='MathClass-rel'>=</mo>
+<mn>1</mn>
+</mrow>
+</math>).</p>
+<!-- l. 367 -->
+<p class='noindent'>Cuando se ejecuta una instrucción en la que se realiza un cálculo y se almacena en un objeto, la salida no muestra el valor almacenado:</p>
+<div class='mdframed' id='mdframed-6'><!-- l. 371 -->
+<p class='noindent'></p>
+<div class='fancyvrb' id='fancyvrb6'><a id='x9-8006r1'></a><span class='ec-lmtt-12'>y&nbsp;&lt;-</span><span id='textcolor9'><span class='ec-lmtt-12'>&nbsp;</span></span><span class='ec-lmtt-12'>x</span><span id='textcolor10'><b>^</b></span><span id='textcolor11'><span class='ec-lmtt-12'>2-3</span></span><span class='ec-lmtt-12'>&nbsp;</span><span id='textcolor12'><i>#&nbsp;no&nbsp;muestra&nbsp;el&nbsp;valor&nbsp;de&nbsp;y</i></span></div>
+</div>
+<!-- l. 376 -->
+<p class='noindent'>La instrucción anterior crea el objeto <span class='texttt'>y</span> y le asigna el valor del cálculo <span class='texttt'>x^2-3</span>, pero no se muestra dicho valor en la salida. Para ver el valor almacenado en una variable hay que consultarlo explícitamente, utilizando la función <span class='texttt'>print</span> o simplemente escribiendo su nombre:</p>
+<div class='mdframed' id='mdframed-7'><!-- l. 383 -->
+<p class='noindent'></p>
+<div class='fancyvrb' id='fancyvrb7'><a id='x9-8008r1'></a><span id='textcolor13'><b>print</b></span><span class='ec-lmtt-12'>(y)&nbsp;</span><span id='textcolor14'><i>#&nbsp;muestra&nbsp;el&nbsp;valor&nbsp;de&nbsp;y</i></span><br class='fancyvrb' />
+<a id='x9-8010r2'></a><span class='ec-lmtt-12'>y&nbsp;</span></div>
+</div>
+<!-- l. 389 -->
+<p class='noindent'></p>
+<div style='height:3em; width:10px; clear:both;'></div>
+</body>
+</html>

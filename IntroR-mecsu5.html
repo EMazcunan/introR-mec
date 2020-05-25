@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.2.0" />
+<title>Graficos con ggplot2</title>
+<meta charset='utf-8' />
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' />
+<meta content='width=device-width,initial-scale=1' name='viewport' />
+<link rel='stylesheet' type='text/css' href='IntroR-mec.css' />
+<meta content='IntroR-mec.tex' name='src' />
+<script id='MathJax-script' type='text/javascript' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js' async='async'>
+</script>
+</head>
+<body>
+<nav class='breadcrumbs-bar'><span><a href='IntroR-mec3.html'>Inicio</a> &gt;&nbsp;3&nbsp;<a href='IntroR-mecse3.html#x6-30003'>Primeros pasos con <span class='texttt'>R</span></a> &gt;&nbsp;3.5&nbsp;<a href='#x11-120003.5'>Gráficos con <span class='texttt'>ggplot2</span></a></span></nav>
+<nav class='controls-bar'>
+<nav class='prev'><a href='IntroR-mecsu4.html'><span>❮</span></a></nav>
+<nav class='next'></nav>
+</nav>
+<h4 class='subsectionHead'><span class='titlemark'>3.5</span> <a id='x11-120003.5' href='IntroR-mec2.html#QQ2-11-12'><span class='fakebreadcrumbs'> </span></a><span class='fakebreadcrumbs'> </span>Gráficos con <span class='texttt'>ggplot2</span></h4>
+<!-- l. 522 -->
+<p class='noindent'>Para terminar haremos un gráfico de las temperaturas máximas y mínimas. Solo copia y ejecuta el código a continuación, para hacerte una idea de las capacidades gráficas de R, no hace falta que analices el código con detalle.</p>
+<div class='mdframed' id='mdframed-13'><!-- l. 528 -->
+<p class='noindent'></p>
+<div class='fancyvrb' id='fancyvrb13'><a id='x11-12002r1'></a><span id='textcolor27'><b>library</b></span><span class='ec-lmtt-12'>(ggplot2)</span><br class='fancyvrb' />
+<a id='x11-12004r2'></a><span id='textcolor28'><b>library</b></span><span class='ec-lmtt-12'>(scales)</span></div>
+</div>
+<div class='mdframed' id='mdframed-14'><!-- l. 535 -->
+<p class='noindent'></p>
+<div class='fancyvrb' id='fancyvrb14'><a id='x11-12006r1'></a><span id='textcolor29'><i>#&nbsp;convertir&nbsp;fechas</i></span><br class='fancyvrb' />
+<a id='x11-12008r2'></a><span class='ec-lmtt-12'>temps</span><span id='textcolor30'><b>$</b></span><span class='ec-lmtt-12'>Fecha&nbsp;&lt;-</span><span id='textcolor31'><span class='ec-lmtt-12'>&nbsp;</span></span><span id='textcolor32'><b>as.Date</b></span><span class='ec-lmtt-12'>(temps</span><span id='textcolor33'><b>$</b></span><span class='ec-lmtt-12'>Fecha,&nbsp;</span><span id='textcolor34'><span class='ec-lmtt-12'>format&nbsp;=</span></span><span class='ec-lmtt-12'>&nbsp;</span><span id=
+'textcolor35'><span class='ec-lmtt-12'>"%d/%m/%Y"</span></span><span class='ec-lmtt-12'>)</span><br class='fancyvrb' />
+<a id='x11-12010r3'></a><span id='textcolor36'><b>View</b></span><span class='ec-lmtt-12'>(temps)</span></div>
+</div>
+<div class='mdframed' id='mdframed-15'><!-- l. 543 -->
+<p class='noindent'></p>
+<div class='fancyvrb' id='fancyvrb15'><a id='x11-12012r1'></a><span id='textcolor37'><i>#&nbsp;gráfico&nbsp;temperaturas&nbsp;máximas&nbsp;y&nbsp;mínimas</i></span><br class='fancyvrb' />
+<a id='x11-12014r2'></a><span id='textcolor38'><b>ggplot</b></span><span class='ec-lmtt-12'>(</span><span id='textcolor39'><span class='ec-lmtt-12'>data&nbsp;=</span></span><span class='ec-lmtt-12'>&nbsp;temps,&nbsp;</span><span id='textcolor40'><b>aes</b></span><span class='ec-lmtt-12'>(</span><span id='textcolor41'><span class='ec-lmtt-12'>x&nbsp;=</span></span><span class='ec-lmtt-12'>&nbsp;Fecha))&nbsp;</span><span id='textcolor42'><b>+</b></span><span id='textcolor43'><span class=
+'ec-lmtt-12'>&nbsp;</span></span><br class='fancyvrb' />
+<a id='x11-12016r3'></a><span id='textcolor44'><span class='ec-lmtt-12'>&nbsp;&nbsp;</span></span><span id='textcolor45'><b>geom_line</b></span><span class='ec-lmtt-12'>(</span><span id='textcolor46'><b>aes</b></span><span class='ec-lmtt-12'>(</span><span id='textcolor47'><span class='ec-lmtt-12'>y&nbsp;=</span></span><span class='ec-lmtt-12'>&nbsp;Tmax),&nbsp;</span><span id='textcolor48'><span class='ec-lmtt-12'>colour=</span></span><span id='textcolor49'><span class=
+'ec-lmtt-12'>"red"</span></span><span class='ec-lmtt-12'>)&nbsp;</span><span id='textcolor50'><b>+</b></span><span id='textcolor51'><span class='ec-lmtt-12'>&nbsp;</span></span><br class='fancyvrb' />
+<a id='x11-12018r4'></a><span id='textcolor52'><span class='ec-lmtt-12'>&nbsp;&nbsp;</span></span><span id='textcolor53'><b>geom_line</b></span><span class='ec-lmtt-12'>(</span><span id='textcolor54'><b>aes</b></span><span class='ec-lmtt-12'>(</span><span id='textcolor55'><span class='ec-lmtt-12'>y&nbsp;=</span></span><span class='ec-lmtt-12'>&nbsp;Tmin),&nbsp;</span><span id='textcolor56'><span class='ec-lmtt-12'>colour=</span></span><span id='textcolor57'><span class=
+'ec-lmtt-12'>"blue"</span></span><span class='ec-lmtt-12'>)&nbsp;</span><span id='textcolor58'><b>+</b></span><span id='textcolor59'><span class='ec-lmtt-12'>&nbsp;</span></span><br class='fancyvrb' />
+<a id='x11-12020r5'></a><span id='textcolor60'><span class='ec-lmtt-12'>&nbsp;&nbsp;</span></span><span id='textcolor61'><b>scale_x_date</b></span><span class='ec-lmtt-12'>(</span><br class='fancyvrb' />
+<a id='x11-12022r6'></a><span class='ec-lmtt-12'>&nbsp;&nbsp;&nbsp;&nbsp;</span><span id='textcolor62'><span class='ec-lmtt-12'>expand=</span></span><span id='textcolor63'><b>c</b></span><span class='ec-lmtt-12'>(</span><span id='textcolor64'><span class='ec-lmtt-12'>0</span></span><span class='ec-lmtt-12'>,</span><span id='textcolor65'><span class='ec-lmtt-12'>0</span></span><span class='ec-lmtt-12'>),</span><br class='fancyvrb' />
+<a id='x11-12024r7'></a><span class='ec-lmtt-12'>&nbsp;&nbsp;&nbsp;&nbsp;</span><span id='textcolor66'><span class='ec-lmtt-12'>breaks&nbsp;=</span></span><span class='ec-lmtt-12'>&nbsp;</span><span id='textcolor67'><b>date_breaks</b></span><span class='ec-lmtt-12'>(</span><span id='textcolor68'><span class='ec-lmtt-12'>"1&nbsp;day"</span></span><span class='ec-lmtt-12'>),&nbsp;</span><br class='fancyvrb' />
+<a id='x11-12026r8'></a><span class='ec-lmtt-12'>&nbsp;&nbsp;&nbsp;&nbsp;</span><span id='textcolor69'><span class='ec-lmtt-12'>labels&nbsp;=</span></span><span class='ec-lmtt-12'>&nbsp;</span><span id='textcolor70'><b>date_format</b></span><span class='ec-lmtt-12'>(</span><span id='textcolor71'><span class='ec-lmtt-12'>"%d"</span></span><span class='ec-lmtt-12'>)</span><br class='fancyvrb' />
+<a id='x11-12028r9'></a><span class='ec-lmtt-12'>&nbsp;&nbsp;)&nbsp;</span><span id='textcolor72'><b>+</b></span><br class='fancyvrb' />
+<a id='x11-12030r10'></a><span id='textcolor73'><span class='ec-lmtt-12'>&nbsp;&nbsp;</span></span><span id='textcolor74'><b>scale_y_continuous</b></span><span class='ec-lmtt-12'>(</span><span id='textcolor75'><span class='ec-lmtt-12'>breaks&nbsp;=</span></span><span class='ec-lmtt-12'>&nbsp;</span><span id='textcolor76'><b>seq</b></span><span class='ec-lmtt-12'>(</span><span id='textcolor77'><b>-</b></span><span id='textcolor78'><span class='ec-lmtt-12'>5</span></span><span class=
+'ec-lmtt-12'>,</span><span id='textcolor79'><span class='ec-lmtt-12'>35</span></span><span class='ec-lmtt-12'>,</span><span id='textcolor80'><span class='ec-lmtt-12'>5</span></span><span class='ec-lmtt-12'>))&nbsp;</span><span id='textcolor81'><b>+</b></span><span id='textcolor82'><span class='ec-lmtt-12'>&nbsp;</span></span><br class='fancyvrb' />
+<a id='x11-12032r11'></a><span id='textcolor83'><span class='ec-lmtt-12'>&nbsp;&nbsp;</span></span><span id='textcolor84'><b>ggtitle</b></span><span class='ec-lmtt-12'>&nbsp;(</span><span id='textcolor85'><span class='ec-lmtt-12'>"Temperaturas&nbsp;máximas&nbsp;y&nbsp;mínimas&nbsp;en&nbsp;abril&nbsp;del&nbsp;2018"</span></span><span class='ec-lmtt-12'>)&nbsp;</span><span id='textcolor86'><b>+</b></span><span id='textcolor87'><span class='ec-lmtt-12'>&nbsp;</span></span><br class='fancyvrb' />
+<a id='x11-12034r12'></a><span id='textcolor88'><span class='ec-lmtt-12'>&nbsp;&nbsp;</span></span><span id='textcolor89'><b>xlab</b></span><span class='ec-lmtt-12'>(</span><span id='textcolor90'><span class='ec-lmtt-12'>"Día"</span></span><span class='ec-lmtt-12'>)&nbsp;</span><span id='textcolor91'><b>+</b></span><span id='textcolor92'><span class='ec-lmtt-12'>&nbsp;&nbsp;</span></span><br class='fancyvrb' />
+<a id='x11-12036r13'></a><span id='textcolor93'><span class='ec-lmtt-12'>&nbsp;&nbsp;</span></span><span id='textcolor94'><b>ylab</b></span><span class='ec-lmtt-12'>&nbsp;(</span><span id='textcolor95'><span class='ec-lmtt-12'>"Temperatura&nbsp;(&nbsp;</span><span class='ts1-lmtt12-'>⁰</span><span class='ec-lmtt-12'>C&nbsp;)"</span></span><span class='ec-lmtt-12'>)&nbsp;</span></div>
+</div>
+<div class='center'><!-- l. 560 -->
+<p class='noindent'></p>
+<!-- l. 560 -->
+<p class='noindent'><img style='width:32.5em' alt='pict' src='IntroR-mec_files/figure-latex/unnamed-chunk-18-1.png' /></p>
+</div>
+<div style='height:3em; width:10px; clear:both;'></div>
+</body>
+</html>
